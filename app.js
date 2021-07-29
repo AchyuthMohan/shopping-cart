@@ -13,7 +13,15 @@ var app = express();
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
-app.engine('hbs',hbs({extname:'hbs',defaultLayout:'layout',layoutsDir:__dirname+'/views/layout/',partialsDir:__dirname+'views/partials/'}))
+app.engine('hbs', hbs({
+  extname: 'hbs', 
+  defaultLayout: 'layout', 
+  layoutsDir: path.join(__dirname, 'views/layout/'),
+  partialsDir  : [
+      //  path to your partials
+      path.join(__dirname, 'views/partials'),
+  ]
+}));
 
 app.use(logger('dev'));
 app.use(express.json());
