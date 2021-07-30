@@ -36,7 +36,7 @@ router.get('/add-product',function(req,res){
 })
 router.post('/add-product',(req,res)=>{
   console.log(req.body)
-  console.log(req.files.Image)
+  
   
 
 
