@@ -1,33 +1,29 @@
 <section>
     <div class="container">
-        <table class="table">
+      <div class="row mt-4">
+        <a href="/admin/add-product" class="btn btn-success ml-auto">Add Product</a>
+      </div>
+        <table class="table mt-5">
   <thead>
     <tr>
-      <th scope="col">#</th>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
-      <th scope="col">Handle</th>
+      <th scope="col">No</th>
+      <th scope="col">Title</th>
+      <th scope="col">Category</th>
+      <th scope="col">Description</th>
+      <th>Image</th>
     </tr>
   </thead>
   <tbody>
+     {{#each products}}
     <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
+      <th scope="row">{{@index}}</th>
+      <td>{{this.name}}</td>
+      <td>{{this.category}}</td>
+      <td>{{this.description}}</td>
+      <td><img style="width:50px;height:50px" src="{{this.image}}"</td>
     </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>Larry</td>
-      <td>the Bird</td>
-      <td>@twitter</td>
-    </tr>
+    {{/each}}
+    
   </tbody>
 </table>
     </div>
