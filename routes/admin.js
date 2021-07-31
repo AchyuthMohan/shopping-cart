@@ -1,6 +1,9 @@
 var express = require('express');
 var router = express.Router();
 
+var multer  = require('multer')
+var upload = multer({ dest: 'uploads/' })
+
 /* GET users listing. */
 router.get('/', function(req, res, next) {
   let products=[
@@ -34,8 +37,9 @@ router.get('/', function(req, res, next) {
 router.get('/add-product',function(req,res){
    res.render('admin/add-product')
 })
-router.post('/add-product',(req,res)=>{
+router.post('/add-product',upload.single('Image'),(req,res)=>{
   console.log(req.body)
+  console.log(req.file)
   
   
 
